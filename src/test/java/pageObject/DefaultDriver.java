@@ -4,19 +4,30 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import utility.Helper;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 
 public class DefaultDriver {
     private WebDriver webDriver;
-    public WebDriver launchURL() {
-        System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
-        webDriver = new SafariDriver();
+    public WebDriver launchURL(Optional<String> browserMode) {
+        if (browserMode.isPresent()) {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("--disable-gpu");
+            webDriver = new ChromeDriver(chromeOptions);
+        }else {
+            System.setProperty("webdriver.safari.driver", "/usr/bin/safaridriver");
+            webDriver = new SafariDriver();
+        }
         webDriver.manage().window().maximize();
         webDriver.get(new Helper().readDataFromFile("url"));
         return webDriver;

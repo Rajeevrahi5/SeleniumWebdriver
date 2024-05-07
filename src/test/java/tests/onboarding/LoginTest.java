@@ -15,6 +15,7 @@ import pageObject.LoginScreen;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 public class LoginTest {
     private DefaultDriver defaultDriver;
@@ -41,7 +42,7 @@ public class LoginTest {
 
     @BeforeMethod
     public void setupBrowser() {
-        WebDriver webDriver = defaultDriver.launchURL();
+        WebDriver webDriver = defaultDriver.launchURL(Optional.ofNullable(System.getProperty("browserMode")));
         loginScreen = new LoginScreen(webDriver);
         homeScreen = new HomeScreen(webDriver);
     }
