@@ -3,6 +3,18 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### .git ###
+.git/hooks
+.git/info
+.git/logs
+.git/objects
+.git/refs
+.git/COMMIT_EDITMSG
+.git/config
+.git/description
+.git/HEAD
+.git/index
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
