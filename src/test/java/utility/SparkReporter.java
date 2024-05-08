@@ -19,7 +19,7 @@ public class SparkReporter {
     DefaultDriver defaultDriver;
 
     public SparkReporter() {
-        extentSparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") +"/test-output/testReport.html");
+        extentSparkReporter = new ExtentSparkReporter("./test-output/testReport.html");
         extentReports = new ExtentReports();
         extentReports.attachReporter(extentSparkReporter);
 

@@ -1,11 +1,5 @@
 package tests.onboarding;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -14,7 +8,6 @@ import pageObject.HomeScreen;
 import pageObject.LoginScreen;
 import utility.SparkReporter;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
