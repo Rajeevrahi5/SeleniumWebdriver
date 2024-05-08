@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import utility.Helper;
 
 import java.io.File;
@@ -36,7 +37,7 @@ public class DefaultDriver {
         String dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         TakesScreenshot screenshot = ((TakesScreenshot) webDriver);
         File source = screenshot.getScreenshotAs(OutputType.FILE);
-        String destination = "Screenshots/" + screenshotName + dateFormat + ".png";
+        String destination = System.getProperty("user.dir") + "/Screenshots/" + screenshotName + dateFormat + ".png";
         File finalDestination = new File(destination);
         FileUtils.copyFile(source, finalDestination, true);
         return destination;
