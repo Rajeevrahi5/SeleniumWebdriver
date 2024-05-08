@@ -38,7 +38,7 @@ public class SparkReporter {
             extentTest.log(Status.FAIL, "Test Case Failed is " + testName);
             extentTest.log(Status.FAIL, "Failed due to:-- " + reason);
             extentTest.log(Status.FAIL, "Checkout the screenshot below: ");
-            //Open report from finder NOT from intelij project.  File file = new File(System.getProperty("user.dir") + "/test-output/Screenshots/" + result.getName() + ".png");
+            //Open report from finder NOT from intellij project.
             File file = new File(defaultDriver.getScreenShot(testName));
             absolutePath = file.getAbsolutePath();
             String mode = Optional.ofNullable(System.getProperty("browserMode")).orElse("local");
