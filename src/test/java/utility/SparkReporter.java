@@ -43,7 +43,7 @@ public class SparkReporter {
             absolutePath = file.getAbsolutePath();
             String mode = Optional.ofNullable(System.getProperty("browserMode")).orElse("local");
             if (mode.equalsIgnoreCase("headless")){
-                extentTest.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(absolutePath.substring(50)).build());
+                extentTest.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(absolutePath.substring(66)).build());
             }else {
                 extentTest.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(absolutePath).build());
             }
