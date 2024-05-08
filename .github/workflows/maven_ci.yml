@@ -34,4 +34,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: sparkHTML
-        path: ./test-output/testReport.html
+        path: ./test-output/
