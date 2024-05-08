@@ -25,7 +25,7 @@ public class HomeScreen {
     }
 
     public void searchBranch() {
-        homeScreenElement = webDriver.findElement(By.xpath("//input[@placeholder='Start typing to search...']"));
+        homeScreenElement = webDriver.findElement(By.xpath("//input[@placeholder='S123tart typing to search...']"));
         homeScreenElement.click();
         homeScreenElement.sendKeys("Hello");
     }
