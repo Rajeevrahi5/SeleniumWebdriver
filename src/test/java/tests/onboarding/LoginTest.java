@@ -21,12 +21,12 @@ public class LoginTest {
     @BeforeTest
     public void setupDriverAndReport() {
         defaultDriver = new DefaultDriver();
+        sparkReporter = new SparkReporter();
     }
 
     @BeforeMethod
     public void setupBrowser() {
         WebDriver webDriver = defaultDriver.launchURL(Optional.ofNullable(System.getProperty("browserMode")));
-        sparkReporter = new SparkReporter();
         loginScreen = new LoginScreen(webDriver);
         homeScreen = new HomeScreen(webDriver);
     }

@@ -46,7 +46,9 @@ build/
 !**/src/test/**/build/
 
 ### Reporter ###
-test-output/*
+test-output/testReport.html
+test-output/spark
+test-output/Screenshots
 
 ### VS Code ###
 .vscode/
