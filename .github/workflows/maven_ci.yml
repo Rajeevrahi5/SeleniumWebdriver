@@ -33,5 +33,5 @@ jobs:
     - name: archive artifact
       uses: actions/upload-artifact@v4
       with:
-        name: sparkHTML
+        name: SparkHTML
         path: ./test-output/
