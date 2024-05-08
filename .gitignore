@@ -45,6 +45,9 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### Reporter ###
+test-output/*
+
 ### VS Code ###
 .vscode/
 
