@@ -11,6 +11,7 @@ import pageObject.DefaultDriver;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 public class SparkReporter {
     private ExtentSparkReporter extentSparkReporter;
@@ -40,7 +41,12 @@ public class SparkReporter {
             //Open report from finder NOT from intelij project.  File file = new File(System.getProperty("user.dir") + "/test-output/Screenshots/" + result.getName() + ".png");
             File file = new File(defaultDriver.getScreenShot(testName));
             absolutePath = file.getAbsolutePath();
-            extentTest.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(absolutePath).build());
+            String mode = Optional.ofNullable(System.getProperty("browserMode")).orElse("local");
+            if (mode.equalsIgnoreCase("headless")){
+                extentTest.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(absolutePath.substring(50)).build());
+            }else {
+                extentTest.log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromPath(absolutePath).build());
+            }
         } else if (testStatus == ITestResult.SUCCESS) {
             extentTest.log(Status.PASS, "The test " +testName +" has been successfully executed.");
         } else {
