@@ -12,9 +12,12 @@ on:
   workflow_dispatch:
     #Workflow_dispatch allows to run test manually from github actions
   push:
-    branches: [ "main" ]
+    branches:
+      - "*"
   pull_request:
     types: [ opened, edited, reopened, review_requested ]
+    branches:
+      - "*"
 
 jobs:
   build:
