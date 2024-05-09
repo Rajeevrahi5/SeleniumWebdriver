@@ -9,15 +9,8 @@
 name: Run Selenium Test with Maven
 
 on:
-  workflow_dispatch:
-    #Workflow_dispatch allows to run test manually from github actions
-  push:
-    branches:
-      - "*"
-  pull_request:
-    types: [ opened, edited, reopened, review_requested ]
-    branches:
-      - "*"
+  schedule:
+    - cron: "*/5 * * * *"
 
 jobs:
   build:
